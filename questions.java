@@ -50,8 +50,8 @@ class questions extends JPanel {
     setBorder(BorderFactory.createLineBorder(Color.black));
     window.setContentPane(this);
 
-    JButton hintBTN = new JButton(new ImageIcon(getClass().getResource("hint.png")));
-    JButton half = new JButton(new ImageIcon(getClass().getResource("50 50.png")));
+    JButton hintBTN = new JButton(new ImageIcon(getClass().getResource("./image/hint.png")));
+    JButton half = new JButton(new ImageIcon(getClass().getResource("./image/50 50.png")));
 
     Q.setBounds(440, 409, 400, 50);
     Q.setBorder(new LineBorder(Color.white, 2, true));
