@@ -25,7 +25,7 @@ class welcomePage extends JPanel {
 
         // Create game title label
         JLabel gameTitleLabel = new JLabel(
-                new ImageIcon("./image/title_icon1.png"));
+                new ImageIcon("./image/title_icon.png"));
         gameTitleLabel.setBounds(360, 84, 550, 150);
 
         // Add game title label to the frame
@@ -59,8 +59,15 @@ class welcomePage extends JPanel {
         });
 
         play.addActionListener((ActionEvent e) -> {
-            go = true;
-            setVisible(false);
+            String name = JOptionPane.showInputDialog(null, "Enter your name:", "Name Enter",
+                    JOptionPane.PLAIN_MESSAGE);
+            if (name == null || name.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please Enter name");
+            } else {
+                go = true;
+                setVisible(false);
+            }
+
         });
 
         exit.addActionListener((ActionEvent e) -> {

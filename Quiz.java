@@ -24,20 +24,20 @@ public class Quiz {
       quiz2[] qObj = {
           new quiz2("Where is this", "ตึก16", "ตึก17", "ตึก18", "ตึก19", "ตึก19", "ตึก00010011", "./image/q1.jpg"),
           new quiz2("Where is this", "หอสมุด", "หอจดหมายเหตุ", "ที่ดู Netflix", "หอนาฬิกา", "หอสมุด", "ดูNETFLIX ได้",
-              "./image/q2.jpeg"),
+              "./image/q2.jpg"),
           new quiz2("Where is this", "โรงอาหาร(ร้อน)", "โรงสมุด", "โรงอาหาร(เย็น)", "โรงเรือน", "โรงอาหาร(เย็น)",
-              "แอร์จริง", "./image/q3.jpeg"),
+              "แอร์จริง", "./image/q3.jpg"),
           new quiz2("Where is this", "ตึก300", "ตึก350", "ตึก400", "ตึก450", "ตึก300", "มีStarbucks",
-              "./image/q4.jpeg"),
+              "./image/q4.jpg"),
           new quiz2("Where is this", "ตึกไข่ดาว", "ตึกไข่เจียว", "ตึกไข่คน", "ตึกไข่ต้ม", "ตึกไข่ดาว", "Fried Egg",
-              "./image/q5.jpeg"),
+              "./image/q5.jpg"),
           new quiz2("Where is this", "ลานเล่นเบรค", "ลานเล่นล้อ", "ลานเล่นกระจก", "ลานเล่นยาง", "ลานเล่นล้อ", "ลลล",
-              "./image/q6.jpeg"),
+              "./image/q6.jpg"),
           new quiz2("Where is this", "โรงอาหาร(เย็น)", "โรงเรือน", "โรงสมุด", "โรงอาหาร(ร้อน)", "โรงอาหาร(ร้อน)",
               "แอร์ทิพย์", "./image/q7.jpg"),
           new quiz2("Where is this", "อาคารเรียนแยก", "โรงอาหาร(เย็น)", "อาคารเรียนรวม", "โรงอาหาร(ร้อน)",
               "อาคารเรียนรวม",
-              "เรียน swu", "./image/q8.jpeg")
+              "เรียน swu", "./image/q8.jpg")
       };
 
       while (nbr != qObj.length && s < time) {

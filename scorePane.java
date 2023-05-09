@@ -11,6 +11,8 @@ class scorePane extends JPanel {
 
     JLabel scoreLabel;
 
+    static String name;
+
     static boolean again = false;
 
     scorePane(JFrame window, int score, int nbrQ) {
