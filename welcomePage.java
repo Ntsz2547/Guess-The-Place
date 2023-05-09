@@ -25,8 +25,8 @@ class welcomePage extends JPanel {
 
         // Create game title label
         JLabel gameTitleLabel = new JLabel(
-                new ImageIcon("./image/title_icon.png"));
-        gameTitleLabel.setBounds(360, 84, 550, 150);
+                new ImageIcon("./image/gificon.gif"));
+        gameTitleLabel.setBounds(384, 124, 520, 115);
 
         // Add game title label to the frame
         add(gameTitleLabel);
@@ -55,7 +55,7 @@ class welcomePage extends JPanel {
     void choose(int time) {
 
         tour.addActionListener((ActionEvent e) -> {
-            // SWU TOUR SECTION
+            JOptionPane.showMessageDialog(null, "coming soon!!");
         });
 
         play.addActionListener((ActionEvent e) -> {

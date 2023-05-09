@@ -32,7 +32,7 @@ class scorePane extends JPanel {
         exit.setBounds(490, 497, 300, 50);
         add(exit);
 
-        scoreLabel = new JLabel(/* Player name */ "Got : " + score + "/" + nbrQ + " points");
+        scoreLabel = new JLabel(namePane.getName() + "Got : " + score + "/" + nbrQ + " points");
         scoreLabel.setHorizontalAlignment(JLabel.CENTER);
         scoreLabel.setFont(new Font("Verdana", Font.BOLD, 60));
         scoreLabel.setForeground(Color.white);
