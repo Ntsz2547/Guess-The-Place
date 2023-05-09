@@ -1,4 +1,6 @@
 import java.awt.event.ActionEvent;
+
+import javax.annotation.Generated;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.LineBorder;
@@ -11,6 +13,8 @@ class welcomePage extends JPanel {
             tour,
             exit;
     static boolean go = false;
+
+    public String name;
 
     welcomePage(JFrame window) {
 
@@ -53,21 +57,13 @@ class welcomePage extends JPanel {
     }
 
     void choose(int time) {
-
         tour.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(null, "coming soon!!");
         });
 
         play.addActionListener((ActionEvent e) -> {
-            String name = JOptionPane.showInputDialog(null, "Enter your name:", "Name Enter",
-                    JOptionPane.PLAIN_MESSAGE);
-            if (name == null || name.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Please Enter name");
-            } else {
-                go = true;
-                setVisible(false);
-            }
-
+            go = true;
+            setVisible(false);
         });
 
         exit.addActionListener((ActionEvent e) -> {

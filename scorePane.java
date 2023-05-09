@@ -11,8 +11,6 @@ class scorePane extends JPanel {
 
     JLabel scoreLabel;
 
-    static String name;
-
     static boolean again = false;
 
     scorePane(JFrame window, int score, int nbrQ) {
@@ -32,7 +30,7 @@ class scorePane extends JPanel {
         exit.setBounds(490, 497, 300, 50);
         add(exit);
 
-        scoreLabel = new JLabel(/* dwd */ "Got : " + score + "/" + nbrQ + " points");
+        scoreLabel = new JLabel("Got : " + score + "/" + nbrQ + " points");
         scoreLabel.setHorizontalAlignment(JLabel.CENTER);
         scoreLabel.setFont(new Font("Verdana", Font.BOLD, 60));
         scoreLabel.setForeground(Color.white);

@@ -5,6 +5,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 
 public class Quiz {
+
   public static void main(String[] args) throws InterruptedException {
 
     JFrame window = new JFrame("Quiz Game");
