@@ -81,7 +81,7 @@ class questions extends JPanel {
     option4.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
 
     timer.setBounds(540, 598, 200, 50);
-    timer.setFont(new Font("Verdana", Font.BOLD, 20));
+    timer.setFont(new Font("Tahoma", Font.BOLD, 20));
     timer.setHorizontalAlignment(JLabel.CENTER);
     timer.setBorder(BorderFactory.createLineBorder(Color.pink));
     timer.setForeground(Color.white);

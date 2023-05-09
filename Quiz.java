@@ -8,7 +8,7 @@ public class Quiz {
 
   public static void main(String[] args) throws InterruptedException {
 
-    JFrame window = new JFrame("Quiz Game");
+    JFrame window = new JFrame("SWU TOUR");
     window.setSize(1280, 720);
     window.setLocationRelativeTo(null);
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
