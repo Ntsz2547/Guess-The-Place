@@ -22,20 +22,20 @@ class scorePane extends JPanel {
 
         playAgain = new JButton("Back To Menu");
         playAgain.setBackground(new Color(255, 255, 255));
-        playAgain.setBounds(300, 250, 200, 50);
+        playAgain.setBounds(490, 370, 300, 50);
         add(playAgain);
 
         exit = new JButton("Exit");
         exit.setBackground(new Color(255, 255, 255));
-        exit.setBounds(300, 350, 200, 50);
+        exit.setBounds(490, 497, 300, 50);
         add(exit);
 
-        scoreLabel = new JLabel(/* playername from namePane */"Got : " + score + "/" + nbrQ);
+        scoreLabel = new JLabel(/* Player name */ "Got : " + score + "/" + nbrQ + " points");
         scoreLabel.setHorizontalAlignment(JLabel.CENTER);
-        scoreLabel.setFont(new Font("Verdana", Font.BOLD, 40));
+        scoreLabel.setFont(new Font("Verdana", Font.BOLD, 60));
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBorder(new LineBorder(Color.white, 2, true));
-        scoreLabel.setBounds(200, 100, 400, 100);
+        scoreLabel.setBounds(215, 150, 850, 100);
         add(scoreLabel);
 
         window.setVisible(true);

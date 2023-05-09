@@ -6,52 +6,61 @@ import javax.swing.border.SoftBevelBorder;
 
 class welcomePage extends JPanel {
 
-    JButton play, tour, exit;
+    JButton title,
+            play,
+            tour,
+            exit;
     static boolean go = false;
 
     welcomePage(JFrame window) {
 
-        setSize(window.getSize().width, window.getSize().height);
+        setSize(1280, 720);
         setLayout(null);
-        setBackground(Color.DARK_GRAY);
         window.setContentPane(this);
 
-        tour = new JButton("SWU TOUR");
-        tour.setBackground(new Color(255, 255, 255));
-        tour.setBounds(300, 100, 400, 50);
+        // Create game title label
+        JLabel bg = new JLabel(
+                new ImageIcon("./image/background.jpg"));
+        bg.setBounds(0, 0, getWidth(), getHeight());
+
+        // Create game title label
+        JLabel gameTitleLabel = new JLabel(
+                new ImageIcon("./image/title_icon1.png"));
+        gameTitleLabel.setBounds(360, 84, 550, 150);
+
+        // Add game title label to the frame
+        add(gameTitleLabel);
+
+        // Add buttons to JPanel after waiting for backgroundLabel to fully display
+        ImageIcon touricon = new ImageIcon("./image/swutour_icon1.png");
+        tour = new JButton("SWU TOUR", touricon);
+        tour.setBounds(380, 354, 500, 64);
         add(tour);
 
-        play = new JButton("Guess The Place");
-        play.setBackground(new Color(255, 255, 255));
-        play.setBounds(300, 50, 400, 50);
+        ImageIcon quizicon = new ImageIcon("./image/quiz_icon1.png");
+        play = new JButton("Guess The Place", quizicon);
+        play.setBounds(380, 452, 500, 64);
         add(play);
 
-        exit = new JButton("Exit");
-        exit.setBackground(new Color(255, 255, 255));
-        exit.setBounds(300, 350, 400, 50);
+        ImageIcon exiticon = new ImageIcon("./image/exit_icon1.png");
+        exit = new JButton("Exit", exiticon);
+        exit.setBounds(380, 550, 500, 64);
         add(exit);
 
+        add(bg);
         window.setVisible(true);
 
     }
 
     void choose(int time) {
 
+        tour.addActionListener((ActionEvent e) -> {
+            // SWU TOUR SECTION
+        });
+
         play.addActionListener((ActionEvent e) -> {
-            namePane namePane = new namePane();
-            int result = JOptionPane.showConfirmDialog(null, "Welcome " + namePane.getName(), "Enter Your Name",
-                    JOptionPane.PLAIN_MESSAGE);
-            if (result == JOptionPane.OK_OPTION) {
-                String playerName = namePane.getName();
-                scorePane scorePane = new scorePane(new JFrame(), 0, 0);
-                scorePane.scoreLabel.setText("Player Name: " + playerName);
-                scorePane.scoreLabel.setBounds(100, 50, 600, 100);
-                scorePane.playAgain.setBounds(300, 250, 200, 50);
-                scorePane.exit.setBounds(300, 350, 200, 50);
-                scorePane.setVisible(true);
-                go = true;
-                setVisible(false);
-            }
+            go = true;
+            setVisible(false);
         });
 
         exit.addActionListener((ActionEvent e) -> {

@@ -32,7 +32,7 @@ class questions extends JPanel {
     JLabel imageLabel = new JLabel(new ImageIcon(obj.imagePath));
     // กำหนดขนาดและตำแหน่งของ JLabel สำหรับแสดงรูปภาพ
     imageLabel.setBounds(264, 27, 750, 306);
-    imageLabel.setBorder(new LineBorder(Color.BLACK, 3));
+    imageLabel.setBorder(new LineBorder(Color.WHITE, 3));
     add(imageLabel);
 
     Q = new JLabel(obj.question);
@@ -53,18 +53,28 @@ class questions extends JPanel {
     JButton hintBTN = new JButton(new ImageIcon(getClass().getResource("./image/hint.png")));
     JButton half = new JButton(new ImageIcon(getClass().getResource("./image/50 50.png")));
 
+    Font font = new Font("Tahoma", Font.BOLD, 16);
     Q.setBounds(440, 409, 400, 50);
     Q.setBorder(new LineBorder(Color.white, 2, true));
     Q.setHorizontalAlignment(JLabel.CENTER);
     Q.setForeground(Color.white);
+    Q.setFont(font);
     option1.setBounds(228, 486, 400, 40);
-    option1.setBackground(new Color(255, 255, 255));
+    option1.setForeground(Color.WHITE);
+    option1.setFont(font);
+    option1.setBackground(new Color(226, 27, 60));
     option2.setBounds(228, 539, 400, 40);
-    option2.setBackground(new Color(255, 255, 255));
+    option2.setBackground(new Color(255, 192, 10));
+    option2.setForeground(Color.WHITE);
+    option2.setFont(font);
     option3.setBounds(652, 486, 400, 40);
-    option3.setBackground(new Color(255, 255, 255));
+    option3.setBackground(new Color(19, 104, 206));
+    option3.setForeground(Color.WHITE);
+    option3.setFont(font);
     option4.setBounds(652, 539, 400, 40);
-    option4.setBackground(new Color(255, 255, 255));
+    option4.setBackground(new Color(38, 137, 12));
+    option4.setForeground(Color.WHITE);
+    option4.setFont(font);
     option1.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
     option2.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
     option3.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
@@ -84,6 +94,7 @@ class questions extends JPanel {
     hintLabel.setHorizontalAlignment(JLabel.CENTER);
     hintLabel.setForeground(Color.white);
     hintLabel.setBorder(new LineBorder(Color.white, 2, true));
+    hintLabel.setFont(font);
 
     hintBTN.addActionListener((ActionEvent e) -> {
       hintLabel.setText(hint);
