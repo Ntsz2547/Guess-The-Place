@@ -19,7 +19,7 @@ class scorePane extends JPanel {
 
     JLabel scoreLabel,
             playerNameLabel,
-            highscoreLabel;
+            latestLabel;
 
     int score;
     static boolean again = false;
@@ -44,7 +44,7 @@ class scorePane extends JPanel {
         // initialize Playername as a member variable
         Playername = new JTextField();
         Playername.setBounds(440, 380, 400, 50);
-        Playername.setToolTipText("YOUR NAME");
+        Playername.setToolTipText("ํ NAME");
         Playername.setFont(new Font("Tahoma", Font.PLAIN, 20));
         Playername.setHorizontalAlignment(JTextField.CENTER);
         add(Playername);
@@ -75,34 +75,22 @@ class scorePane extends JPanel {
         scoreLabel.setBounds(215, 30, 850, 150);
         add(scoreLabel);
 
-        highscoreLabel = new JLabel();
-        highscoreLabel.setHorizontalAlignment(JLabel.CENTER);
-        highscoreLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
-        highscoreLabel.setForeground(Color.white);
-        highscoreLabel.setBorder(new LineBorder(Color.white, 2, true));
-        highscoreLabel.setBounds(440, 192, 400, 60);
-        add(highscoreLabel);
+        latestLabel = new JLabel();
+        latestLabel.setHorizontalAlignment(JLabel.CENTER);
+        latestLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
+        latestLabel.setForeground(Color.white);
+        latestLabel.setBorder(new LineBorder(Color.white, 2, true));
+        latestLabel.setBounds(390, 192, 500, 60);
+        add(latestLabel);
 
-        // อ่านไฟล์ PlayerScore.txt เพื่อหาคะแนนสูงสุด
+        // อ่านไฟล์ PlayerScore.txt เพื่อแสดงผลคะแนนที่ผู้เล่นคนล่าสุดทำได้
         Path path = Paths.get("Playerscore.txt");
         try {
             List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
-            String maxPlayerName = "";
-            int maxScore = -1;
-            for (String line : lines) {
-                String[] parts = line.split(" ");
-                String playerName = parts[0];
-                score = Integer.parseInt(parts[1]);
-                if (score > maxScore) {
-                    maxScore = score;
-                    maxPlayerName = playerName;
-                }
-            }
-            if (maxScore > -1) {
-                String highscoreText = "High Score by: " + maxPlayerName + " Got " + maxScore + "points";
-                highscoreLabel.setText(highscoreText);
-            } else {
-                highscoreLabel.setText("No High Score Yet");
+            if (lines.size() > 0) {
+                String latestScore = lines.get(lines.size() - 1); // get the latest score
+                String[] tokens = latestScore.split(" ");
+                latestLabel.setText("Latest score by : " + tokens[0] + " Got " + tokens[1] + "/" + nbrQ + " points");
             }
         } catch (IOException ex) {
             System.out.println("Error reading file");

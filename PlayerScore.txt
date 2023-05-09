@@ -1,0 +1,17 @@
+ppu 7
+ww 2
+wdw 2
+parit 8
+we 2
+ponwa 8
+ 2
+w 2
+pppvp 2
+d 7
+ppxrit 8
+d 2
+ty 2
+ 2
+sc 3
+xs 3
+sx 6
