@@ -52,7 +52,7 @@ class scorePane extends JPanel {
         Savebtn = new JButton("SAVE");
         Savebtn.setBackground(new Color(255, 255, 255));
         Savebtn.setFont(BTNfont);
-        Savebtn.setBounds(490, 442, 300, 50);
+        Savebtn.setBounds(490, 472, 300, 50);
         add(Savebtn);
 
         playAgain = new JButton("Back To Menu");
@@ -90,7 +90,14 @@ class scorePane extends JPanel {
             if (lines.size() > 0) {
                 String latestScore = lines.get(lines.size() - 1); // get the latest score
                 String[] tokens = latestScore.split(" ");
-                latestLabel.setText("Latest score by : " + tokens[0] + " Got " + tokens[1] + "/" + nbrQ + " points");
+                if (tokens[0] == " ") {
+                    latestLabel.setText("Latest score by : " + "Noname" + " Got " + tokens[1] + "/" + nbrQ + " points");
+                } else {
+                    latestLabel
+                            .setText("Latest score by : " + tokens[0] + " Got " + tokens[1] + "/" + nbrQ + " points");
+                }
+            } else {
+                latestLabel.setText("No more score yet");
             }
         } catch (IOException ex) {
             System.out.println("Error reading file");
