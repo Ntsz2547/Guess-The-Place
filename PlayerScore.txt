@@ -19,3 +19,8 @@ ww 2
  2
 e2 2
  2
+qs 2
+ 2
+g 2
+dwd 2
+wdwd 2

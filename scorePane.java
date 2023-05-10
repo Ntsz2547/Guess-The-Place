@@ -24,7 +24,7 @@ class scorePane extends JPanel {
     int score;
     static boolean again = false;
 
-    scorePane(JFrame window, int score, int nbrQ) {
+    scorePane(JFrame window, int score, int numberQuestion) {
 
         this.score = score; // initialize score in the constructor
         Font BTNfont = new Font("Tahoma", Font.BOLD, 16);
@@ -49,13 +49,13 @@ class scorePane extends JPanel {
         Playername.setHorizontalAlignment(JTextField.CENTER);
         add(Playername);
 
-        Savebtn = new JButton("SAVE");
+        Savebtn = new JButton("SAVE & Back to menu");
         Savebtn.setBackground(new Color(255, 255, 255));
         Savebtn.setFont(BTNfont);
         Savebtn.setBounds(490, 472, 300, 50);
         add(Savebtn);
 
-        playAgain = new JButton("Back To Menu");
+        playAgain = new JButton("Play Again");
         playAgain.setBackground(new Color(255, 255, 255));
         playAgain.setFont(BTNfont);
         playAgain.setBounds(290, 598, 300, 50);
@@ -67,7 +67,7 @@ class scorePane extends JPanel {
         exit.setBounds(690, 598, 300, 50);
         add(exit);
 
-        scoreLabel = new JLabel("You got : " + score + "/" + nbrQ + " points");
+        scoreLabel = new JLabel("You got : " + score + "/" + numberQuestion + " points");
         scoreLabel.setHorizontalAlignment(JLabel.CENTER);
         scoreLabel.setFont(new Font("Tahoma", Font.BOLD, 60));
         scoreLabel.setForeground(Color.white);
@@ -90,11 +90,13 @@ class scorePane extends JPanel {
             if (lines.size() > 0) {
                 String latestScore = lines.get(lines.size() - 1); // get the latest score
                 String[] tokens = latestScore.split(" ");
-                if (tokens[0] == " ") {
-                    latestLabel.setText("Latest score by : " + "Noname" + " Got " + tokens[1] + "/" + nbrQ + " points");
+                if (tokens[0] == "") {
+                    latestLabel.setText(
+                            "Latest score by : " + "Noname" + " Got " + tokens[1] + "/" + numberQuestion + " points");
                 } else {
                     latestLabel
-                            .setText("Latest score by : " + tokens[0] + " Got " + tokens[1] + "/" + nbrQ + " points");
+                            .setText("Latest score by : " + tokens[0] + " Got " + tokens[1] + "/" + numberQuestion
+                                    + " points");
                 }
             } else {
                 latestLabel.setText("No more score yet");
@@ -125,7 +127,8 @@ class scorePane extends JPanel {
         });
 
         playAgain.addActionListener((ActionEvent e) -> {
-            again = true;
+            // play quiz again
+
         });
 
         exit.addActionListener((ActionEvent e) -> {

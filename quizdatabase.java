@@ -4,12 +4,12 @@ import java.awt.*;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 
-class quiz2 {
+class quizdatabase {
     String question, op1, op2, op3, op4, correct_answer, hint, imagePath; // เพิ่ม property imagePath
 
-    quiz2(String q, String o1, String o2, String o3, String o4, String ans, String h, String imagePath) { // ส่ง
-                                                                                                          // imagePath
-                                                                                                          // มาให้
+    quizdatabase(String q, String o1, String o2, String o3, String o4, String ans, String h, String imagePath) { // ส่ง
+        // imagePath
+        // มาให้
         question = q;
         op1 = o1;
         op2 = o2;

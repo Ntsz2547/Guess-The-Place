@@ -25,7 +25,7 @@ class questions extends JPanel {
   static JLabel timer = new JLabel("00 : 00 : 000");
   static counter count = new counter();
 
-  questions(quiz2 obj, JFrame window) {
+  questions(quizdatabase obj, JFrame window) {
 
     // สร้าง JLabel และ ImageIcon สำหรับแสดงรูปภาพตาม imagePath ที่ระบุใน quiz2
 
@@ -50,8 +50,8 @@ class questions extends JPanel {
     setBorder(BorderFactory.createLineBorder(Color.black));
     window.setContentPane(this);
 
-    JButton hintBTN = new JButton(new ImageIcon(getClass().getResource("./image/hint.png")));
-    JButton half = new JButton(new ImageIcon(getClass().getResource("./image/50 50.png")));
+    JButton hintBTN = new JButton(new ImageIcon(getClass().getResource("./image/hinticon.gif")));
+    JButton half = new JButton(new ImageIcon(getClass().getResource("./image/halficon.gif")));
 
     Font font = new Font("Tahoma", Font.BOLD, 16);
     Q.setBounds(440, 409, 400, 50);

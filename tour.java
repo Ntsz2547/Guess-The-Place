@@ -3,17 +3,34 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
+import java.nio.file.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
-public class tour extends JPanel {
+public class Tour extends JPanel {
 
-    void welcomePage(JFrame frame) {
-        setSize(1280, 720);
+    static boolean end = false;
+
+    Tour(JFrame window) {
+
+        setSize(window.getSize().width, window.getSize().height);
         setLayout(null);
-        frame.setContentPane(this);
-        frame.setResizable(false); // ปรับขนาดหน้าต่างให้พอดีกับเนื้อที่ที่ได้กำหนดไว้
-        frame.setLocationRelativeTo(null); // กำหนดให้หน้าต่างอยู่ตรงกลางจอ
-        frame.setVisible(true); // แสดงหน้าต่าง
+        setBackground(Color.pink);
+        window.setContentPane(this);
+        setVisible(true);
 
+    }
+
+    void choose() {
+        while (!end) {
+            try {
+                Thread.sleep(0);
+            } catch (InterruptedException ex) {
+            }
+        }
+
+        end = false;
     }
 
 }
