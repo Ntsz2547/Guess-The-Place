@@ -6,6 +6,9 @@ import javax.swing.border.SoftBevelBorder;
 
 public class Quiz {
 
+  public Quiz(JFrame window) {
+  }
+
   public static void main(String[] args) throws InterruptedException {
 
     JFrame window = new JFrame("SWU TOUR");

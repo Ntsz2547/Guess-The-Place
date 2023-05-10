@@ -1,5 +1,4 @@
 import java.awt.event.ActionEvent;
-
 import javax.annotation.Generated;
 import javax.swing.*;
 import java.awt.*;
@@ -11,8 +10,7 @@ class WelcomePage extends JPanel {
             play,
             tour,
             exit;
-    static boolean go = false,
-            t = false;
+    static boolean go = false;
 
     private Tour tourPanel;
     public String name;
@@ -52,12 +50,14 @@ class WelcomePage extends JPanel {
 
         add(bg);
         window.setVisible(true);
+
+        tourPanel = new Tour(window);
     }
 
     void choose(int time) {
         tour.addActionListener((ActionEvent e) -> {
             setVisible(false);
-            tourPanel = new Tour((JFrame) SwingUtilities.getWindowAncestor(this));
+            tourPanel.showTourPage();
         });
 
         play.addActionListener((ActionEvent e) -> {
