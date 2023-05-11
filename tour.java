@@ -24,7 +24,6 @@ public class Tour extends JPanel {
         exit.addActionListener((ActionEvent e) -> {
             WelcomePage.go = true;
             setVisible(false);
-            setVisible(false);
         });
         add(exit);
     }
