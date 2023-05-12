@@ -25,7 +25,7 @@ public class Tour extends JPanel {
         // create exut to quiz button
         ImageIcon exitIcon = new ImageIcon("./image/Start_GameBtn.jpg");
         exit = new JButton("Quiz Start", exitIcon);
-        exit.setBounds(580, 570, 415, 85);
+        exit.setBounds(580, 570, 415, 70);
         exit.addActionListener((ActionEvent e) -> {
             WelcomePage.go = true;
             setVisible(false);
@@ -46,9 +46,9 @@ public class Tour extends JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 index++;
                 if (index > totalImages) {
+                    add(exit);
                     remove(bg);
                     remove(dialoglLabel);
-                    add(exit);
 
                 } else {
                     bg.setIcon(new ImageIcon("./image/" + index + ".jpg"));

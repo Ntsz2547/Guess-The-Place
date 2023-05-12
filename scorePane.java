@@ -43,28 +43,25 @@ class scorePane extends JPanel {
 
         // initialize Playername as a member variable
         Playername = new JTextField();
-        Playername.setBounds(440, 380, 400, 50);
+        Playername.setBounds(490, 380, 300, 50);
         Playername.setToolTipText("ํ NAME");
         Playername.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        Playername.setBorder(new LineBorder(Color.pink, 1, true));
         Playername.setHorizontalAlignment(JTextField.CENTER);
         add(Playername);
 
-        Savebtn = new JButton("SAVE & Back to menu");
+        ImageIcon mainmenuIcon = new ImageIcon("./image/mainmenu_icon.png");
+        Savebtn = new JButton(mainmenuIcon);
         Savebtn.setBackground(new Color(255, 255, 255));
         Savebtn.setFont(BTNfont);
         Savebtn.setBounds(490, 472, 300, 50);
         add(Savebtn);
 
-        playAgain = new JButton("Play Again");
-        playAgain.setBackground(new Color(255, 255, 255));
-        playAgain.setFont(BTNfont);
-        playAgain.setBounds(290, 598, 300, 50);
-        add(playAgain);
-
-        exit = new JButton("Exit");
+        ImageIcon exitIcon = new ImageIcon("./image/exit_scorepane.png");
+        exit = new JButton(exitIcon);
         exit.setBackground(new Color(255, 255, 255));
         exit.setFont(BTNfont);
-        exit.setBounds(690, 598, 300, 50);
+        exit.setBounds(490, 564, 300, 50);
         add(exit);
 
         scoreLabel = new JLabel("You got : " + score + "/" + numberQuestion + " points");
@@ -111,28 +108,47 @@ class scorePane extends JPanel {
 
     void choose() {
         Savebtn.addActionListener((ActionEvent e) -> {
-            // บันทึก Playername และ score ใน PlayerScore.txt
             String playerName = Playername.getText();
-            String scoreString = Integer.toString(score);
-            try {
-                FileWriter fw = new FileWriter("Playerscore.txt", true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(playerName + " " + scoreString); // use scoreString instead of score
-                bw.newLine();
-                bw.close();
-            } catch (IOException ex) {
-                System.out.println("Error writing to file");
+            if (playerName.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter your name.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                // บันทึก Playername และ score ใน PlayerScore.txt
+                String scoreString = Integer.toString(score);
+                try {
+                    FileWriter fw = new FileWriter("Playerscore.txt", true);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write(playerName + " " + scoreString); // use scoreString instead of score
+                    bw.newLine();
+                    bw.close();
+                } catch (IOException ex) {
+                    System.out.println("Error writing to file");
+                }
+                again = true;
             }
-            again = true;
-        });
-
-        playAgain.addActionListener((ActionEvent e) -> {
-            // play quiz again
-
         });
 
         exit.addActionListener((ActionEvent e) -> {
-            System.exit(0);
+            String playerName = Playername.getText();
+            if (playerName.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter your name.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                int confirm = JOptionPane.showConfirmDialog(null, "Are you sure?", "Confirmation",
+                        JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    // บันทึก Playername และ score ใน PlayerScore.txt
+                    String scoreString = Integer.toString(score);
+                    try {
+                        FileWriter fw = new FileWriter("Playerscore.txt", true);
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        bw.write(playerName + " " + scoreString); // use scoreString instead of score
+                        bw.newLine();
+                        bw.close();
+                    } catch (IOException ex) {
+                        System.out.println("Error writing to file");
+                    }
+                    System.exit(0);
+                }
+            }
         });
 
         while (!again) {
