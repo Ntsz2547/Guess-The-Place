@@ -34,7 +34,7 @@ class WelcomePage extends JPanel {
 
         // Add buttons to JPanel after waiting for backgroundLabel to fully display
         ImageIcon tourIcon = new ImageIcon("./image/swutour_icon1.png");
-        tour = new JButton("SWU TOUR", tourIcon);
+        tour = new JButton(tourIcon);
         tour.setBounds(380, 354, 500, 64);
         add(tour);
 
