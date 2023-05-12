@@ -61,7 +61,7 @@ class WelcomePage extends JPanel {
         });
 
         play.addActionListener((ActionEvent e) -> {
-            go = true;
+            go = true; 
             setVisible(false);
         });
 
