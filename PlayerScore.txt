@@ -2,3 +2,5 @@ sqs 1
 s 2w 1
 ww 0
 ded 4
+Parit 0
+Pongsai 3
