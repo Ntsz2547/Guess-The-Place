@@ -49,13 +49,13 @@ public class Tour extends JPanel {
                     remove(bg);
                     remove(dialoglLabel);
                     add(exit);
-                    
+
                 } else {
                     bg.setIcon(new ImageIcon("./image/" + index + ".jpg"));
                     dialoglLabel.setIcon(new ImageIcon("./image/Tour" + index + "_dia.jpg"));
                     dialoglLabel.setLocation(0, getHeight());
                     move(dialoglLabel, 0, -150, 2);
-                    
+
                 }
             }
         });
@@ -77,25 +77,21 @@ public class Tour extends JPanel {
                 int frameX = frame.getX();
                 int frameY = frame.getY();
                 if (deltaX == 0) {
-                }
-                else if (deltaX > 0) {
+                } else if (deltaX > 0) {
                     frameX = Math.min(targetX, frameX + xMoveBy);
-                } 
-                else {
+                } else {
                     frameX = Math.max(targetX, frameX + xMoveBy);
                 }
 
                 if (deltaY == 0) {
-                }
-                else if (deltaY > 0) {
+                } else if (deltaY > 0) {
                     frameY = Math.min(targetY, frameY + yMoveBy);
-                } 
-                else {
+                } else {
                     frameY = Math.max(targetY, frameY + yMoveBy);
-                }       
+                }
                 frame.setLocation(frameX, frameY);
                 if (frameX == targetX && frameY == targetY) {
-                    ((Timer)e.getSource()).stop();
+                    ((Timer) e.getSource()).stop();
                 }
             }
         });
